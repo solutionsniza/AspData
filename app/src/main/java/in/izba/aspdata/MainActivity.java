@@ -70,9 +70,10 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (NetworkUtils.isNetworkConnected(MainActivity.this)) {
                     if(firebaseAuth.getCurrentUser() != null) {
-                        Log.d(TAG, "inside on authstatechanged............................");
+                        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                        Log.d(TAG, "inside on authstatechanged............................"+firebaseUser.getEmail());
                         Intent intent = new Intent(MainActivity.this, AddData.class);
-                        intent.putExtra("usrEmail", firebaseAuth.getCurrentUser().toString());
+                        intent.putExtra("usrEmail", firebaseUser.getEmail());
                         startActivity(intent);
                         //startActivity(new Intent(MainActivity.this, AddData.class));
                     }

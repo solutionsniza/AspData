@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -18,6 +19,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -28,16 +30,21 @@ import java.util.Calendar;
 public class AddData extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
     FirebaseAuth mAuth;
+    FirebaseAuth.AuthStateListener mAuthListener;
+
+
     RadioGroup radioGroup;
 
-    EditText userName, userSurname, txtDate, txtTime, birthPlace, mobileNum;
+    EditText txtDate, txtTime, mobileNum;
     EditText readText;
+    TextView userEmailId;
+
     private int year, month, day, mHour, mMinute;
     //static final int DIALOG_ID=0;
 
     Button btnDatePicker, btnTimePicker;
 
-    String genderText, usrName, usrSurname;
+    String genderText, usrEmailId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,21 +55,26 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
 
         mAuth = FirebaseAuth.getInstance();
 
-        String usrEmailId = mAuth.getCurrentUser().toString();
-        Toast.makeText(AddData.this, "User email id: " + usrEmailId, Toast.LENGTH_SHORT).show();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (firebaseAuth.getCurrentUser() == null) {
+                    startActivity(new Intent(AddData.this, MainActivity.class));
+                }
+            }
+        };
+
+        //String usrEmailId = mAuth.getCurrentUser().toString();
+        Intent intent = getIntent();
+        usrEmailId = intent.getStringExtra("usrEmail");
+        userEmailId = (TextView) findViewById(R.id.userEmail);
+        userEmailId.setText(usrEmailId);
+
+        //Toast.makeText(AddData.this, "User email id: " + usrEmailId, Toast.LENGTH_SHORT).show();
 
 
         radioGroup = (RadioGroup) findViewById(R.id.genderSelection);
         radioGroup.clearCheck();
-
-        /*userName = (EditText) findViewById(R.id.userName);
-        userSurname = (EditText) findViewById(R.id.userSurName);*//*
-        birthPlace = (EditText) findViewById(R.id.placeOfBirth);*/
-
-
-
-
-
 
         btnDatePicker=(Button)findViewById(R.id.btn_date);
         btnTimePicker=(Button)findViewById(R.id.btn_time);
@@ -162,9 +174,6 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
                     //Toast.makeText(AddData.this, "Nothing selected from Radio Group.", Toast.LENGTH_SHORT).show();
                 }
 
-                /*String getUserName = userName.getText().toString();
-                String getUserSurName = userSurname.getText().toString();*/
-
 
                 readText = (EditText) findViewById(R.id.userName);
                 String getUserName = readText.getText().toString();
@@ -202,8 +211,8 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
                 readText = (EditText) findViewById(R.id.gothram);
                 String gthrm = readText.getText().toString();
 
-                readText = (EditText) findViewById(R.id.userEmail);
-                String contactEmail = readText.getText().toString();
+                /*readText = (EditText) findViewById(R.id.userEmail);
+                String contactEmail = readText.getText().toString();*/
 
                 readText = (EditText) findViewById(R.id.education);
                 String eduQual = readText.getText().toString();
@@ -257,8 +266,8 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
                 else {
                     int lenght = mobileNumber.length();
                     if(lenght == 10) Toast.makeText(AddData.this, mobileNumber, Toast.LENGTH_SHORT).show();
-                    String messageContent =
-                            "Gender : " + genderText + "\n"
+                    String messageContent = "To," + "\n" + "ASP Matrimonial Services," + "\n"
+                            + "Gender : " + genderText + "\n"
                             + "Name : " + getUserName + "\n"
                             + "SurName : " + getUserSurName + "\n"
                             + "Date of Birth : " + dateOfBirth + "\n"
@@ -272,7 +281,7 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
                             + "Mothers name and Details : " + mName + "\n"
                             + "Caste and Sub Caste : " + cSubCaste + "\n"
                             + "Gothram : " + gthrm + "\n"
-                            + "Contact Email ID : " + contactEmail + "\n"
+                            + "Contact Email ID : " + usrEmailId + "\n"
                             + "Educational Qualifications : " + eduQual + "\n"
                             + "Employment Details : " + empDetails + "\n"
                             + "Business Details : " + busInfo + "\n"
@@ -287,8 +296,12 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
                             + "References : " + usrRef + "\n"
                             + "Mobile Number : " + mobNum + "\n"
                             + "Alternate Mobile Number : " + altMobNum + "\n"
+                            + "The information provided above is correct to my knowledge."
                             ;
                     sendEmail(messageContent);
+
+                    Intent thankIntent = new Intent(AddData.this, ThankYou.class);
+                    startActivity(thankIntent);
                 }
             }
         });
