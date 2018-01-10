@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.izba.aspdata.AddData"
+    android:background="#ede7f6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
+        <View
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dp"
+            android:background="#ffc107" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/header1"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="#2979ff"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dp"
+            android:background="#ffc107"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="CHOOSE YOUR GENDER"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                >
+
+                <RadioGroup
+                    android:id="@+id/genderSelection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:theme="@style/MyRaidoButton"
+                    android:layout_gravity="center"
+                    >
+                    <RadioButton
+                        android:id="@+id/radioButton1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="MALE"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingRight="5dp"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="FEMALE"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingRight="5dp"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioButton3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="OTHERS"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingRight="5dp"
+                        />
+                </RadioGroup>
+
+            </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dp"
+            android:background="#ffc107" />
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Enter Your Name Here"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+        <EditText
+            android:id="@+id/userSurName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Enter Your Surname Here"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    >
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/in_date"
+                        android:padding="15dp"
+                        android:textColorHint="#039be5"
+                        android:textSize="25sp"
+                        android:textStyle="bold|italic"
+                        android:textColor="#039be5"
+                        />
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/btn_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date of Birth"
+                        android:textColor="#ffc107"
+                        android:textSize="25sp"
+                        app:backgroundTint="#1b5e20"/>
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                >
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/in_time"
+                    android:padding="15dp"
+                    android:textColorHint="#039be5"
+                    android:textSize="25sp"
+                    android:textStyle="bold|italic"
+                    android:textColor="#039be5"
+                    />
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time of Birth"
+                    android:textColor="#ffc107"
+                    android:textSize="25sp"
+                    app:backgroundTint="#1b5e20"/>
+
+            </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dp"
+            android:background="#ffc107" />
+        <EditText
+            android:id="@+id/placeOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Place of Birth"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/starAndPadam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Star and Padam"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Height"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/maritalStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Marital Status"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/complexion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Complexion"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/fatherName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Father Name and Details"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/motherName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Mother Name and Details"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/caste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Caste and Sub-Caste"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/gothram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Ghothram"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/userEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Your Email ID"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/education"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Educational Qualification"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/jobInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Employment Information"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/businessInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Business Details"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/hobbies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Hobbies"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/foodHabits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Veg or Non-Veg"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/settledAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Presently Settled At"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/partnerPref"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Partner Preferences"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/aboutFamily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="About your Family"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/assets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Information of your Assets"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/brotherSister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Information about Brothers/Sisters"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Address for Communication"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/references"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="References"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            />
+
+        <EditText
+            android:id="@+id/mobileNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Mobile Number"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            android:inputType="number"
+            />
+
+        <EditText
+            android:id="@+id/altMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Alternate Mobile Number"
+            android:padding="15dp"
+            android:textColorHint="#039be5"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:textColor="#039be5"
+            android:inputType="number"
+            />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Data"
+            android:textColor="#ffc107"
+            android:textSize="25sp"
+            app:backgroundTint="#1b5e20"
+            android:onClick="saveClassified"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dp"
+            android:background="#ffc107"
+            android:paddingBottom="5dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dp"
+            android:background="#ffc107"
+            android:paddingTop="5dp"/>
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

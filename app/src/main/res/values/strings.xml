@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ASP</string>
+
+    <string name="contactUs">Contact Us</string>
+    <string name="aboutUs">About Us</string>
+    <string name="aboutApp">About App</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="exit">Exit</string>
+
+    <string name="header1">Ajay Shankar Prasad   Matrimony Services</string>
+
+
+</resources>
