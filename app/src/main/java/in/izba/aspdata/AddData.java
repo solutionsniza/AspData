@@ -299,7 +299,7 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
                             + "The information provided above is correct to my knowledge."
                             ;
                     sendEmail(messageContent);
-
+                    Toast.makeText(AddData.this, "after email", Toast.LENGTH_SHORT).show();
                     /*Intent thankIntent = new Intent(AddData.this, ThankYou.class);
                     startActivity(thankIntent);*/
                 }
@@ -393,7 +393,24 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
 
         intent.setType("message/rfc822");
         Intent chooser = Intent.createChooser(intent, "send email");
-        startActivity(chooser);
+        startActivityForResult(chooser, 2);
+    }
 
+    // Call Back method  to get the Message form other Activity
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        // check if the request code is same as what is passed  here it is 2
+        if(requestCode==2)
+        {
+            String thanksMessage = "ASP Matrimonial" + "\n" + "Thanks for your details." + "\n" + "Our team will communicate with you in a while."
+                    + "\n" + "Feel free to reach out to us for any details."  + "\n" + "Do share your Latest Coloured photograph over email."
+                    + "\n" + "If you are willing to pay Rs.1000/- and get the benefits of Premium Member, Please click the link below."
+                    + "\n" + "https://www.payumoney.com/paybypayumoney/#/275193"
+                    + "\n" + "Regards"
+                    + "\n" + "ASP Matrimony";
+            showDialog(thanksMessage);
+        }
     }
 }
