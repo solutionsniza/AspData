@@ -300,8 +300,8 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
                             ;
                     sendEmail(messageContent);
 
-                    Intent thankIntent = new Intent(AddData.this, ThankYou.class);
-                    startActivity(thankIntent);
+                    /*Intent thankIntent = new Intent(AddData.this, ThankYou.class);
+                    startActivity(thankIntent);*/
                 }
             }
         });
