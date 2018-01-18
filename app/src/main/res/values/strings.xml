@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">ASP</string>
+<resources xmlns:href="http://schemas.android.com/tools">
+    <string name="app_name">Parinayam</string>
 
     <string name="contactUs">Contact Us</string>
     <string name="aboutUs">About Us</string>
@@ -7,7 +7,17 @@
     <string name="disclaimer">Disclaimer</string>
     <string name="exit">Exit</string>
 
-    <string name="header1">Ajay Shankar Prasad   Matrimony Services</string>
+    <string name="header1">Parinayam - Matrimonial Services</string>
+
+
+    <string name="thanksMessage">"Parinayam - Matrimonial Services \n Thanks for your details.\nOur team will communicate with you in a while. Feel free to reach out to us for any details. Do share your Latest Coloured photograph over email.
+                    \n If you are willing to pay Rs.1000/- and get the benefits of Premium Member, Please click the link below."</string>
+    <string name="payumoney">
+        <a href="https://www.payumoney.com/paybypayumoney/#/275193">Click to Pay</a>
+    </string>
+    <string name="regardsMessage">
+        "Regards \nParinayam - Search your true love"
+    </string>
 
 
 </resources>

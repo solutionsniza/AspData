@@ -266,7 +266,7 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
                 else {
                     int lenght = mobileNumber.length();
                     if(lenght == 10) Toast.makeText(AddData.this, mobileNumber, Toast.LENGTH_SHORT).show();
-                    String messageContent = "To," + "\n" + "ASP Matrimonial Services," + "\n"
+                    String messageContent = "To," + "\n" + "PARINAYAM - Matrimonial Services," + "\n"
                             + "Gender : " + genderText + "\n"
                             + "Name : " + getUserName + "\n"
                             + "SurName : " + getUserSurName + "\n"
@@ -314,7 +314,7 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.my_menu, menu);
-        setTitle("Asp Matrimony Services");
+        setTitle("PARINAYAM");
         return true;
     }
 
@@ -326,11 +326,11 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
         switch (item.getItemId()) {
 
             case R.id.contactUs:
-                showDialog("Asp Matrimony Services" + "\n" + "asdsd@gmail.com");
+                showDialog("PARINAYAM" + "\n" + "ajaysankarprasad@gmail.com");
                 return true;
 
             case R.id.aboutUs:
-                String message = "Asp Matrimony Services " +
+                String message = "PARINAYAM " +
                         "Matrimony service for all.";
                 showDialog(message);
                 return true;
@@ -341,7 +341,7 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
 
             case R.id.disclaimer:
                 showDialog("Copyright Niza Solutions. Email: solutionsniza@gmail.com" + "\n" +
-                "All the content belongs to the ASP Matrimony Services, and is sole responsible.");
+                "All the content belongs to the PARINAYAM - Matrimony Services, and is sole responsible.");
                 return true;
 
             case R.id.exit:
@@ -359,7 +359,7 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
     public void showDialog(String message) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(AddData.this);
         dialog.setCancelable(false);
-        dialog.setTitle("ASP Matrimony Services");
+        dialog.setTitle("PARINAYAM");
 
         dialog.setMessage(message);
         dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -386,7 +386,7 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
 
         intent.setData(Uri.parse("mailto:"));
 
-        String [] to={"soanker80@gmail.com"};
+        String [] to={"ajaysankarprasad@gmail.com"};
         intent.putExtra(Intent.EXTRA_EMAIL, to);
         intent.putExtra(Intent.EXTRA_SUBJECT, mailSubject);
         intent.putExtra(Intent.EXTRA_TEXT, mailBody);
@@ -404,13 +404,16 @@ public class AddData extends AppCompatActivity implements DatePickerDialog.OnDat
         // check if the request code is same as what is passed  here it is 2
         if(requestCode==2)
         {
-            String thanksMessage = "ASP Matrimonial" + "\n" + "Thanks for your details." + "\n" + "Our team will communicate with you in a while."
+            /*String thanksMessage = "Parinayam - Matrimonial Services" + "\n" + "Thanks for your details." + "\n" + "Our team will communicate with you in a while."
                     + "\n" + "Feel free to reach out to us for any details."  + "\n" + "Do share your Latest Coloured photograph over email."
                     + "\n" + "If you are willing to pay Rs.1000/- and get the benefits of Premium Member, Please click the link below."
                     + "\n" + "https://www.payumoney.com/paybypayumoney/#/275193"
                     + "\n" + "Regards"
-                    + "\n" + "ASP Matrimony";
-            showDialog(thanksMessage);
+                    + "\n" + "Parinayam - Search your true love";
+            showDialog(thanksMessage);*/
+
+            Intent thankIntent = new Intent(AddData.this, ThankYou.class);
+                    startActivity(thankIntent);
         }
     }
 }
